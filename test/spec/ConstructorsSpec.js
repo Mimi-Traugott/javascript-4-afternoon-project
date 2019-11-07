@@ -10,6 +10,7 @@ describe('Constructor functions', function() {
       it('Should build car objects', function() {
         var mustang = new CarFactory('Ford', 'Mustang');
         expect(mustang).toEqual(jasmine.any(Object));
+        expect(mustang.make).toEqual('Ford');
       });
       it('Objects have make & model properties', function() {
         var mustang = new CarFactory('Ford', 'Mustang');

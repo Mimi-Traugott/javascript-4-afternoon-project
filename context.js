@@ -76,7 +76,9 @@ function whatIsThis() {
   return this
 }
 // uncomment the line below and tell us what the context of "this" is for whatIsThis()
-let context1 = whatIsThis()
+let context1 = this
+// let context1 = global
+console.log(this)
 
 let product = {
   name: 'snake plant',

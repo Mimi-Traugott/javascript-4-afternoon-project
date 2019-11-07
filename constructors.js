@@ -16,8 +16,11 @@
 
 function CarFactory(make, model){
   this.make = make;
-  this.model =model;
+  this.model = model;
 }
+// function CarFactory(make, model){
+//   return {make,model}
+// }
 
 ////////// PROBLEM 2 //////////
 
@@ -87,7 +90,7 @@ function Employee(name, email, hireDate) {
     this.rating = rating;
   }
   Movie.prototype.changeRating = function(num){
-    return num + this.rating/num.length
+    return this.rating = (num + this.rating) / 2
   }
   
   ////////// PROBLEM 5 //////////
@@ -103,13 +106,9 @@ function Employee(name, email, hireDate) {
     this.savedPosts=savedPosts;
   }
   User.prototype.addSavedPost = function(id, title, rating){
-    var newObj = {
-      id,
-      title,
-      rating,
-    }
-    this.savedPosts.push(newObj)
+    this.savedPosts.push({id,title,rating})
   }
+
   
   ////////// PROBLEM 6 //////////
   
@@ -128,10 +127,11 @@ function Employee(name, email, hireDate) {
   // You will continue to use the constructor function you created in problem 5.
   // Write a prototype method for the User constructor function named changePostRating that will take in two number parameters. The first will be an id (a number) and the second will be the new rating (a number). Use the id to find the matching object in the savedPosts array. Once you find the matching object, update it's rating score with the new rating parameter.
   
-  User.prototype.changePostRating= function(num1, num2){
+  User.prototype.changePostRating= function(id, newRating){
     let obj = this.savedPosts.find(function(element) {
-      return element.id === num1;
+      return element.id === id;
     })
-    obj.rating = num2;
+    obj.rating = newRating;
   }
+  
   
